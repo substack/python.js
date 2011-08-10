@@ -33,3 +33,7 @@ StringType.prototype.__str__ = function () {
 StringType.prototype.toString = function () {
     return this.value;
 };
+
+StringType.prototype.inspect = function () {
+    return '<String ' + JSON.stringify(this.toString()) + '>';
+};

@@ -13,6 +13,10 @@ Float.prototype.__mul__ = function (left) {
     return new Float(this.value * Number(left));
 };
 
+Float.prototype.__div__ = function (left) {
+    return new Float(this.value / Number(left));
+};
+
 Float.prototype.__neg__ = function (left) {
     return new Float(-this.value);
 };
@@ -39,4 +43,8 @@ Float.prototype.toString = function () {
         v = v.replace(/([eE]\d+)?$/, '.0$1');
     }
     return v;
+};
+
+Float.prototype.inspect = function () {
+    return '<Float ' + this.toString() + '>';
 };

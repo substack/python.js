@@ -14,5 +14,8 @@ Type.prototype.toString = function () {
     return this.type;
 };
 
-var StringType = require('./string');
+Type.prototype.inspect = function () {
+    return '<Type ' + this.toString() + '>';
+};
 
+var StringType = require('./string');

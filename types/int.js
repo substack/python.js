@@ -1,4 +1,6 @@
 var Type = require('./type');
+var FloatType = require('./float');
+var StringType = require('./string');
 
 var Int = module.exports = function (n) {
     this.value = Number(n);
@@ -20,6 +22,10 @@ Int.prototype.__add__ = function (left) {
 
 Int.prototype.__mul__ = function (left) {
     return new FloatType(this.value * Number(left));
+};
+
+Int.prototype.__div__ = function (left) {
+    return new FloatType(Math.floor(this.value / Number(left)));
 };
 
 Int.prototype.__neg__ = function (left) {
@@ -52,5 +58,9 @@ Int.prototype.__str__ = function () {
 };
 
 Int.prototype.toString = function () {
-    return this.value;
+    return this.value.toString();
+};
+
+Int.prototype.inspect = function () {
+    return '<Int ' + this.toString() + '>';
 };
