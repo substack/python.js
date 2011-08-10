@@ -1,5 +1,3 @@
-var StringType = require('./string');
-
 var Type = module.exports = function (t) {
     this.type = String(t);
 };
@@ -15,3 +13,6 @@ Type.prototype.__repr__ = function () {
 Type.prototype.toString = function () {
     return this.type;
 };
+
+var StringType = require('./string');
+
